@@ -64,17 +64,7 @@ All the previous rankings will receive points (10pts for 1st, 1pts for the 10th)
 
 ### 4) Complementary informations about the trip:
 
-When the trip is designed, we will organise visits in the best breweries for each location and propose a local guide to show our customers around and give his beer expertise. To give the best experience possible, the local guide is chosen among the most active and involved users of RateBeer or BeerAdvocate. 
-
-## Proposed timeline: 
-
-For milestone P3, we will work on the couple of other features mentioned above which, for the moste part, require to load the .txt file. It is also possible that we will implement new classements if new ideas come to us. We will also find good way to visualize every rankings (for instance using the world map plot that we used). Finally, we will work on complementary informations about the trip (visits, local guide, ...).
-
-## Organization within the team: 
-
-Four of the five members are working on the design of the rankings (each person works on one features) and the fifth member is working on the logistic part (determine the direction the project will take, comments of the code, structure of the notebook, readme writting) :
-
-## Additional question for the TA: 
+Once the trip is all set, we’ll line up visits to the top breweries in each destination, along with a local guide to show our guests around and share their expert beer knowledge. To ensure the best experience, we handpick our guides from the most passionate and active members of RateBeer or BeerAdvocate!
 
 
 ## Important package to include:
