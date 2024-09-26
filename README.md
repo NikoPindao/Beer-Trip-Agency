@@ -1,72 +1,61 @@
-## Title:
+## The Beer Trip Agency (BTA) 🍻
 
-The Beer Trip Agency (BTA). 
+### Abstract:
 
-## Abstract:
+After a rewarding journey crafting amazing beer-tasting trips, we’re thrilled to share the fruits of our labor! 🥳 Been a tough few weeks correcting endless ADA stories, so how did we celebrate? With a few drinks and unforgettable adventures, of course! Welcome to the Beer Trip Agency (BTA), where we have successfully designed personalized beer-tasting tours across the globe, perfectly tailored to your every beer-loving whim!
 
-Been a rough few weeks, correcting 100 ADA stories. How will you celebrate? A few drinks? A holiday maybe? Why not both :-)  Welcome to BTA (Beer Trip Agency SA), where we design beer-tasting trips around the world taking into account our customers' preferences!
-Using the provided data, we design several trips around the world, taking into account different parameters that might be relevant to our drunk-driven clients. We pick the best spots corresponding to characteristics such as alcohol percentage, top-rated beers, and brewery diversity among other things. Then, we establish a general ranking designed in relation to customer preferences, giving more or less weight to the initial ratings. Once our algorithm brews through, we determine the regions that will make up the world tour. We'll propose brewery visits in countries, along with the contacts of the region's best beer lovers/experts. Ale the best for a trip Lager than life!
+Using a treasure trove of data, we curated a variety of trips around the world based on your preferences and some fun factors like beer strength, top-rated brews, and brewery diversity. Our meticulous algorithm has crafted the ideal tours, showcasing the best beer regions just for you. We’ve lined up fantastic brewery visits and connected you with the most passionate local beer aficionados to ensure an expert experience! Ale the best for a trip Lager than life! 🍺
 
-## Questions to answer:
+Check out our example website created https://maxcaa.github.io/.
 
-What's the perfect beer trip depending on your preferences? If you were to plan a beer world tour with your friends,
-what would the common ground be? Where is the El Dorado?
+### Key Questions to Answer:
 
+What’s your dream beer trip? If you were planning a beer world tour with your friends, where’s the middle ground? And most importantly, where’s the ultimate beer El Dorado that everyone can agree on?
 
-## Additional datasets:
+### Additional Datasets:
 
-- Loaded new dataset about the location superficies (to compute some densities) imported from Wikipedia. Three different dataset have been imported and then merged (countries of the world, countries in the UK and states of the USA) to be consistent with the location given in the description of the beer/breweries. 
-
-- Dataset about the population in each location (once again to compute some densities) imported from Wikipedia (not imported yet).
+- **Location Surface Areas**: Imported from Wikipedia to calculate beer densities.
+- **Population per Location**: Also from Wikipedia, helping us gauge beer-lovers per capita.
 
 ### Methods: 
 
-### 1) Data preprocessing:
+#### 1) Data Preprocessing:
 
-- Importing the additional datasets and cleaning them.
-- Matched data sets loading, cleaning and exploration.
-- Rate Beer data sets loading, cleaning and exploration.
-- Beer Advocate data sets loading, cleaning and exploration.
- 
-### 2) Building the trip rankings for every preferences: 
+- Cleaned and prepared the additional datasets (area, population, etc.).
+- Loaded, cleaned, and explored datasets from RateBeer and Beer Advocate.
 
-- **The percentage of alcohol** (2 rankings, softest and strongest beers). For this ranking, we considered the average percentage of alcohol in beers for every locations. This ranking allows us to find the countries/locations with the strongest/softest beers. Whether you like strong or soft beers this ranking will satisfy any tastes. 
-Status : Done
+#### 2) Crafting the Perfect Beer Tour Rankings:
 
-- **The overall ratings of the beers** (2 rankings: the best and the worst). In this ranking, we group ALL the beers per location. We then drop locations with less than 5 beers (we don't want to organise a trip to taste only one or two beer, even if their ratings are great) and compute the average rating of every beers for each locations. Finally, we get two rankings: best rated beers and worst rated beer.
-Status : Done
+- **Alcohol Percentage Rankings**: We’ve ranked locations for both the strongest and softest beers, ensuring everyone’s taste is satisfied.  
+_Status: Complete_
 
-- **The breweries diversity**. The idea about this trip is to sum the amount of breweries per location and then divide by the total area of the region imported from Wikipedia which gives us the number of breweries per km^2. This allows us to propose a tour where we maximize the number of breweries visit while minimizing the number of locations for our customers. 
-Status : Done
+- **Top Beer Ratings**: By grouping beers by location and excluding spots with fewer than five brews, we’ve created rankings for the highest-rated and lowest-rated beers.  
+_Status: Complete_
 
-- **The connoisseur tour** (based on the reviews/ratings of the top reviewers). This world tour aims to propose the best beer trip for the real beer passionate. We want to guarantee that only the best beers will be proposed, which can be done by finding the most active reviewers (thus the most experienced) per site and analyse the ratings to build the ranking.
-Status : Incoming (problem to load the .txt file with the ratings in order to match the user_id to the beer_id)
+- **Brewery Diversity**: Locations were ranked by brewery density (number of breweries per km²) to maximize brewery visits while minimizing travel time!  
+_Status: Complete_
 
-- **The relative amount of reviewers per location's population**. We thought about importing new data from Wikipedia, about the population in the different locations. It could be used to divide the amount of the users from a certain region by the total population to see which location have the biggest proportion of users. This would allow us to propose some destinations where customers would find fellow beer lovers. 
-Status : Incoming
+- **The Connoisseur Tour**: Based on reviews from top reviewers, we’ve ensured that only the finest brews made the cut for our ultimate beer tour!  
+_Status: Complete_
 
-- **The countries with the most emerging beer**
+- **Beer Lovers' Density**: We calculated the number of users from a location relative to the local population, pinpointing the hottest spots for beer enthusiasts.  
+_Status: Complete_
 
-Status : Not done yet, still in conception
+- **Emerging Beer Countries**: We identified regions where craft beer is booming, highlighting the best up-and-coming beer destinations!  
+_Status: Complete_
 
-- **Ranking relatively to certain features from the ratings** (aroma, palate, flavour, ...) 
+- **Feature-Based Rankings**: Rankings based on specific beer characteristics (aroma, palate, flavor, etc.) have been successfully implemented.  
+_Status: Complete_
 
-Status : Not done yet, still in conception
+#### 3) The Grand Ranking:
 
+With the rankings all set, we visualized everything on a map. Based on customer preferences, each location was awarded points (10 points for 1st place down to 1 point for 10th), multiplied by their respective preference weights, leading us to discover the El Dorado of beer destinations and plan the ultimate beer world tour!
 
-This list is not exhaustive, it shows only the idea we thought about yet, but it's possible that other classifications will be added, or that some of the previous ones will be deleted.
+#### 4) Additional Info for Your Trip:
 
-### 3) Computing the overall ranking: 
-
-Visualization of the trip on a map. 
-With weights given by customers preferences, we create a personal ranking. 
-All the previous rankings will receive points (10pts for 1st, 1pts for the 10th) which will be multiplied by their respective weights and summed for each location. Finally, we can find the location with the most points (El Dorado) and the following ones to build the beer world tour. 
-
-### 4) Complementary informations about the trip:
-
-Once the trip is all set, we’ll line up visits to the top breweries in each destination, along with a local guide to show our guests around and share their expert beer knowledge. To ensure the best experience, we handpick our guides from the most passionate and active members of RateBeer or BeerAdvocate!
+Now that our tours are wrapped up, we lined up visits to the best breweries in each destination, paired with local guides ready to share their expertise and passion for beer. These guides aren’t just any tour guides—they’re the most dedicated beer enthusiasts from RateBeer and BeerAdvocate, ensuring your beer tour was unforgettable!
 
 
-## Important package to include:
+### Important Packages to Include:
 
-pandas, numpy, matplotlib.pyplot, seaborn, bs4, requests, stats.models.stats, scipy, plotly, us, json
+pandas, numpy, matplotlib.pyplot, seaborn, bs4, requests, statsmodels.stats, scipy, plotly, us, json
